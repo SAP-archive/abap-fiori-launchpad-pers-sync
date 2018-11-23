@@ -16,12 +16,12 @@ Usecases:
 * Global Landscape Setup with different Fiori Frontend Server per region for high availability and best performance
 
 # Prerequisites
-- Either
--- two or more identical Fiori Frontend Server (same software stack, base customizing, roles, user etc.)
+* Either
+** two or more identical Fiori Frontend Server (same software stack, base customizing, roles, user etc.)
 or
--- two or more identical clients on same server/system
-- Trusted RFC connection
-- NW ABAP, SAP_UI >= 7.51
+** two or more identical clients on same server/system
+* Trusted RFC connection
+* NW ABAP, SAP_UI >= 7.51
 
 # Deployment
 
