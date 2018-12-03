@@ -63,6 +63,8 @@ Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Ma
 
 ![ZSYNCFLAG](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/ZSYNCFLAG.png)
 
+![ZSYNCFLAG MAINTENANCE](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/ZSYNCFLAG_MAIN.png)
+
 ## Function Groups (SE37)
 ### Z_SYNC_PERS (UI2)
 
@@ -97,7 +99,9 @@ Code
 => DELETE_CONTENT_AND_FILL_RESP  
 => DO_WRITE_CONTENT_AND_FILL_RESP  
 
-![enhancement_lrep](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/ENH_LREP.png)
+![enhancement_lrep1](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/ENH_LREP1.png)
+
+![enhancement_lrep2](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/ENH_LREP2.png)
 
 # Testing
 
