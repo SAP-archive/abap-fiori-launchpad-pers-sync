@@ -19,9 +19,15 @@ In SAP Fiori, one distinguishes two types of user personalization:
 
 The architecture of the solution is depicted below. Please note, that there is a small difference between UI2 and LREP, when it comes to the transmitted data. Whereas for UI2, a full sync can be performed (means old data is purged and replaced by all existing personalization data), for LREP, only changes = delta will be taken into account. See also section FAQ.
 
+## Overview
+
 ![architecture](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/AR_SUMMARY.png)
 
+## UI2
+
 ![architecture_ui2](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/AR_UI2.png)
+
+## LREP
 
 ![architecture_lrep](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/AR_LREP.png)
 
@@ -38,11 +44,13 @@ The architecture of the solution is depicted below. Please note, that there is a
 ## RFC Connection (SM59)
 Create trusted RFC connection for current user, as depicted below:
 
-<IMG>
+![SM59](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/SM59.png)
 
 ## Roles (PFCG)
 As the solution requires trusted RFC communication, respective roles on target / destinations servers need to be created.
 Auth. Objects S_RFC (Source) / S_RFCACL (Destination)
+
+![PFCG](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/PFCG.png)
 
 ## Customizing Table (SE11/SM30)
 Name e.g. ZYSYNCFLAG  
@@ -53,28 +61,28 @@ Transparent Table
 Storage Type: Column Store  
 Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Maintenance Generator"  
 
-<IMG>
+![ZSYNCFLAG](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/ZSYNCFLAG.png)
 
 ## Function Groups (SE37)
 ### Z_SYNC_PERS (UI2)
 
 Code  
-<IMG>
+![Z_SYNC_PERS](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS.png)
 
 ### Z_SYNC_PERS_REMOTE (UI2)
 
 Code  
-<IMG>
+![Z_SYNC_PERS_REMOTE](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_REMOTE.png)
 
 ### Z_SYNC_PERS_LREP (LREP)
 
 Code  
-<IMG>
+![Z_SYNC_PERS_LREP](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_LREP.png)
 
 ### Z_SYNC_PERS_LREP_REMOTE (LREP)
 
 Code  
-<IMG>
+![Z_SYNC_PERS_LREP_REMOTE](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_LREP_REMOTE.png)
 
 ## Enhancement Spots (SE80)
 
@@ -98,7 +106,7 @@ Code
 - Check destination system
 - Check Application Log, transaction SLG1 - Object "/UI2/BE", Sub-Object "/UI2/LAUNCHPAD"
 
-<IMG>
+![SLG1](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/SLG1.png)
 
 # FAQ
 
