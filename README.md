@@ -2,10 +2,10 @@
 Sample code to synchronize SAP Fiori launchpad user personalization among different Fiori Frontend Servers.
 We hereby distinguish two types of personalization
 
-1) SAP Fiori launchpad personalization -> UI2
+1) SAP Fiori launchpad personalization "UI2"
 e.g. add/delete/move tile(s), add/delete group(s), ...
 
-2) In-App personalization -> LREP
+2) In-App personalization "LREP"
 e.g. filter variants, table variants, ...
 
 # Motivation
