@@ -19,7 +19,11 @@ In SAP Fiori, one distinguishes two types of user personalization:
 
 The architecture of the solution is depicted below. Please note, that there is a small difference between UI2 and LREP, when it comes to the transmitted data. Whereas for UI2, a full sync can be performed (means old data is purged and replaced by all existing personalization data), for LREP, only changes = delta will be taken into account. See also section FAQ.
 
-<IMG>
+![architecture](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/AR_SUMMARY.png)
+
+![architecture_ui2](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/AR_UI2.png)
+
+![architecture_lrep](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/AR_LREP.png)
 
 # Prerequisites
 - Either
@@ -78,14 +82,14 @@ Code
 /ui2/cl_wdr_cfg_pers_utils  
 =>config_changed  
 
-<IMG>
+![enhancement_ui2](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/ENH_UI2.png)
 
 ### LREP
 /UIF/CL_LREP_REST_FILE_RES  
 => DELETE_CONTENT_AND_FILL_RESP  
 => DO_WRITE_CONTENT_AND_FILL_RESP  
 
-<IMG>
+![enhancement_lrep](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/ENH_LREP.png)
 
 # Testing
 
