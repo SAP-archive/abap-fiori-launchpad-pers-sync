@@ -132,6 +132,8 @@ There is no master system by definition. For a given user, the master will be th
 * What happens, if any of the destination server(s) are down? How to restore personalization once systems are up again?
   - UI2:
   - LREP: 
+  
+  Queued RFC? Table & Batch Job?
 
 * What to keep in mind during system upgrades?
 
