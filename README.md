@@ -9,10 +9,10 @@ This sample code offers an easy approach of closing this gap.
 
 In SAP Fiori, one distinguishes two types of user personalization:
 
-*SAP Fiori launchpad personalization "UI2"*
+**SAP Fiori launchpad personalization "UI2"**
 > e.g. add/delete/move tile(s), add/delete group(s), ...
 
-*In-App personalization "LREP"*  
+**In-App personalization "LREP"** 
 > e.g. filter variants, table variants, ...
 
 # Requirements
