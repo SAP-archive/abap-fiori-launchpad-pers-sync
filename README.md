@@ -122,21 +122,20 @@ Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Ma
 
 * What are the performance implications?
 
-The injected coding shown here should be light-weight. Also, the frequency of SAP Fiori launchpad user personalization is expected to be typically low. Nevertheless, if you expect very high usage of personalization, the respective load of the additional RFC calls should be monitored and, in worst case, system should be sized accordingly.
+The proposed coding is light-weight. Also, the frequency of SAP Fiori launchpad user personalization is expected to be low. Nevertheless, if you expect very high usage of personalization, the respective load of the additional RFC calls should be monitored and, in worst case, system should be sized accordingly.
 
 * Which system serves as master?
 
 There is no master system by definition. For a given user, the master will be the system, where the last personalization occured.
 
-* What happens, if any of the destination server(s) are down? How to restore personalization once systems are up again?
-  - UI2:
-  - LREP: 
-  
-  Queued RFC? Table & Batch Job?
+* What happens, if any of the destination server(s) are down? How to ensure consistency? How to restore personalization once systems are up again?
+
+For reliable failover handling, switching to an asyncronous processing would make sense. This could for instance be done via queued RFCs or a temporary persistance for outbound processing via batch job. Nevertheless, there should be a mechanism to empty the queue before allowing users entering the restored system.
+Note, whereas for UI2, we can easily always do a full sync, which ensures consistency, LREP data needs to be processed in sequence one by one!
 
 * What to keep in mind during system upgrades?
 
-During an upgrade/maintenance window, it is recommended to disable SAP Fiori launchpad user personalization, to ensure data consistency. This can be done via launchpad parameters. <LINK>
+During an upgrade/maintenance window, it is recommended to disable SAP Fiori launchpad user personalization, to ensure data consistency. This can be done via [launchpad parameters](https://blogs.sap.com/2018/08/14/options-to-disable-fiori-personalization/).
   
 # SUPPORT
 
