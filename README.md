@@ -21,8 +21,9 @@ The architecture of the solution is depicted below. Please note, that there is a
 
 # Prerequisites
 - Either
-  - two or more identical Fiori Frontend Server (same software stack, base customizing, roles, user etc.)
-  - or two or more identical clients on same server/system, both fed by same DEV/QAS system(s)!
+  - two or more identical Fiori Frontend Server
+  - or two or more identical clients on same server/system
+- same software stack, base customizing, roles, user etc., both fed by same DEV/QAS system(s)!
 - Trusted RFC connection
 - NW ABAP, SAP_UI >= 7.51
 
@@ -38,13 +39,13 @@ As the solution requires trusted RFC communication, respective roles on target /
 Auth. Objects S_RFC (Source) / S_RFCACL (Destination)
 
 ## Customizing Table (SE11/SM30)
-Name e.g. ZYSYNCFLAG
-Type/Delivery Class: Transparent Table / "C" (Cust. Table), Display/Maintenance Allowed
-Data Class: APPL0
-Size Category: 0
-Transparent Table
-Storage Type: Column Store
-Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Maintenance Generator"
+Name e.g. ZYSYNCFLAG  
+Type/Delivery Class: Transparent Table / "C" (Cust. Table), Display/Maintenance Allowed  
+Data Class: APPL0  
+Size Category: 0  
+Transparent Table  
+Storage Type: Column Store  
+Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Maintenance Generator"  
 
 <IMG>
 
@@ -91,14 +92,22 @@ Code
 - Check destination system
 - Check Application Log, transaction SLG1 - Object "/UI2/BE", Sub-Object "/UI2/LAUNCHPAD"
 
+<IMG>
+
 # FAQ
 
 * What are the performance implications?
 
+The injected coding shown here should be light-weight. Also, the frequency of SAP Fiori launchpad user personalization is expected to be typically low. Nevertheless, if you expect very high usage of personalization, the respective load of the additional RFC calls should be monitored and, in worst case, system should be sized accordingly.
+
 * Which system serves as master?
 
+There is no master system by definition. For a given user, the master will be the system, where the last personalization occured.
+
 * What happens, if any of the destination server(s) are down? How to restore personalization once systems are up again?
-  - UI2
-  - LREP
+  - UI2:
+  - LREP: 
 
 * What to keep in mind during system upgrades?
+
+During an upgrade/maintenance window, it is recommended to disable SAP Fiori launchpad user personalization, to ensure data consistency. This can be done via launchpad parameters. <LINK>
