@@ -1,5 +1,5 @@
 # Purpose
-Today, there is no built-in functionality to syncronize any SAP Fiori launchpad user personalization across multiple distributed Fiori frontend servers. This typically occurs in large system landscapes:
+Today, there is no built-in functionality to syncronize any SAP Fiori launchpad user personalization across multiple distributed Fiori frontend servers. This typically is an issue in larger system landscapes:
 * Mirrored Fiori Frontend Server within one region for high availability
 * Global Landscape Setup with different Fiori Frontend Server per region for high availability and best performance
 
@@ -12,10 +12,11 @@ e.g. add/delete/move tile(s), add/delete group(s), ...
 2. In-App personalization "LREP"
 e.g. filter variants, table variants, ...
 
-# Motivation
-Today, there is no built-in functionality to syncronize any SAP Fiori launchpad user personalization across multiple distributed Fiori frontend servers. This typically occurs in large system landscapes as follows:
-* Mirrored Fiori Frontend Server within one region for high availability
-* Global Landscape Setup with different Fiori Frontend Server per region for high availability and best performance
+# Architecture
+
+The architecture of the solution is depicted below. Please note, that there is a small difference between UI2 and LREP, when it comes to the transmitted data. Whereas for UI2, a full sync can be performed (means old data is purged and replaced by all existing personalization data), for LREP, only changes = delta will be taken into account.
+
+<IMG>
 
 # Prerequisites
 - Either
@@ -27,18 +28,22 @@ Today, there is no built-in functionality to syncronize any SAP Fiori launchpad 
 # Deployment
 
 ## RFC Connection (SM59)
-sm59 trusted RFC, Current User
+Create trusted RFC connection for current user, as depicted below:
 
-## Role (PFCG)
-S_RFC / S_RFCACL
+<IMG>
 
-## Customizing Table ZSYNCFLAG (SE11/SM30)
+## Roles (PFCG)
+As the solution requires trusted RFC communication, respective roles on target / destinations servers need to be created.
+Auth. Objects S_RFC (Source) / S_RFCACL (Destination)
+
+## Customizing Table (SE11/SM30)
+Name e.g. ZYSYNCFLAG
 Type/Delivery Class: Transparent Table / "C" (Cust. Table), Display/Maintenance Allowed
 Data Class: APPL0
 Size Category: 0
 Transparent Table
 Storage Type: Column Store
-Create SM30 view -> "Utilities" -> "Table Maintenance Generator"
+Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Maintenance Generator"
 
 ## Function Groups (SE37)
 ### Z_SYNC_PERS (UI2)
@@ -60,9 +65,10 @@ Create SM30 view -> "Utilities" -> "Table Maintenance Generator"
 
 # Testing
 
-Application Log, transaction SLG1
-Object "/UI2/BE"
-SubObject "/UI2/LAUNCHPAD"
+- Assign roles to user(s)
+- Perform personalization on source system.
+- Check destination system
+- Check Application Log, transaction SLG1 - Object "/UI2/BE", Sub-Object "/UI2/LAUNCHPAD"
 
 # FAQ
 
@@ -71,8 +77,7 @@ SubObject "/UI2/LAUNCHPAD"
 * Which system serves as master?
 
 * What happens, if any of the destination server(s) are down? How to restore personalization once systems are up again?
-
-UI2
-LREP
+  - UI2
+  - LREP
 
 * What to keep in mind during system upgrades?
