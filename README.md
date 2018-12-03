@@ -39,24 +39,22 @@ The architecture of the solution is depicted below. Please note, that there is a
 
 ![architecture_lrep](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/AR_LREP.png)
 
-# Download
+# Download & Installation
 
-xyz
+It is actually not necessary to download any files, you can easily copy and paste the required code fragments directly, as mentioned below. If you still like to have a local copy, you can follow this [guide](https://help.github.com/articles/cloning-a-repository/).
 
-# Installation
-
-## RFC Connection (SM59)
+### RFC Connection (SM59)
 Create trusted RFC connection for current user, as depicted below:
 
 ![SM59](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/SM59.png)
 
-## Roles (PFCG)
+### Roles (PFCG)
 As the solution requires trusted RFC communication, respective roles on target / destinations servers need to be created.
 Auth. Objects S_RFC (Source) / S_RFCACL (Destination)
 
 ![PFCG](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/PFCG.png)
 
-## Customizing Table (SE11/SM30)
+### Customizing Table (SE11/SM30)
 Name: e.g. ZYSYNCFLAG  
 Type/Delivery Class: Transparent Table / "C" (Cust. Table), Display/Maintenance Allowed  
 Data Class: APPL0  
@@ -68,13 +66,13 @@ Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Ma
 
 ![ZSYNCFLAG MAINTENANCE](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/ZSYNCFLAG_MAIN.png)
 
-## Function Groups (SE37)
-### Z_SYNC_PERS (UI2)
+### Function Groups (SE37)
+#### Z_SYNC_PERS (UI2)
 
 Code  
 ![Z_SYNC_PERS](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS.png)
 
-### Z_SYNC_PERS_REMOTE (UI2)
+#### Z_SYNC_PERS_REMOTE (UI2)
 
 Code  
 ![Z_SYNC_PERS_REMOTE](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_REMOTE.png)
@@ -84,20 +82,20 @@ Code
 Code  
 ![Z_SYNC_PERS_LREP](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_LREP.png)
 
-### Z_SYNC_PERS_LREP_REMOTE (LREP)
+#### Z_SYNC_PERS_LREP_REMOTE (LREP)
 
 Code  
 ![Z_SYNC_PERS_LREP_REMOTE](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_LREP_REMOTE.png)
 
-## Enhancement Spots (SE80)
+### Enhancement Spots (SE80)
 
-### UI2
+#### UI2
 /ui2/cl_wdr_cfg_pers_utils  
 =>config_changed  
 
 ![enhancement_ui2](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/ENH_UI2.png)
 
-### LREP
+#### LREP
 /UIF/CL_LREP_REST_FILE_RES  
 => DELETE_CONTENT_AND_FILL_RESP  
 => DO_WRITE_CONTENT_AND_FILL_RESP  
@@ -117,7 +115,7 @@ Code
 
 # SUPPORT
 
-xyz
+This project is provided "as-is": there is no guarantee that raised issues will be answered or addressed in future releases.
 
 # FAQ
 
