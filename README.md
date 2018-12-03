@@ -69,22 +69,26 @@ Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Ma
 ### Function Groups (SE37)
 #### Z_SYNC_PERS (UI2)
 
-Code  
+[Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/Z_SYNC_PERS.txt)
+
 ![Z_SYNC_PERS](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS.png)
 
 #### Z_SYNC_PERS_REMOTE (UI2)
 
-Code  
+[Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/Z_SYNC_PERS_REMOTE.txt)
+
 ![Z_SYNC_PERS_REMOTE](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_REMOTE.png)
 
 ### Z_SYNC_PERS_LREP (LREP)
 
-Code  
+[Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/Z_SYNC_PERS_LREP.txt)
+
 ![Z_SYNC_PERS_LREP](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_LREP.png)
 
 #### Z_SYNC_PERS_LREP_REMOTE (LREP)
 
-Code  
+[Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/Z_SYNC_PERS_LREP_REMOTE.txt)
+
 ![Z_SYNC_PERS_LREP_REMOTE](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_LREP_REMOTE.png)
 
 ### Enhancement Spots (SE80)
@@ -106,16 +110,13 @@ Code
 
 # Testing
 
+- Maintain customizing table ZSYNCFLAG via SM30
 - Assign roles to user(s)
 - Perform personalization on source system.
 - Check destination system
 - Check Application Log, transaction SLG1 - Object "/UI2/BE", Sub-Object "/UI2/LAUNCHPAD"
 
 ![SLG1](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/SLG1_OUTPUT.png)
-
-# SUPPORT
-
-This project is provided "as-is": there is no guarantee that raised issues will be answered or addressed in future releases.
 
 # FAQ
 
@@ -136,3 +137,13 @@ There is no master system by definition. For a given user, the master will be th
 * What to keep in mind during system upgrades?
 
 During an upgrade/maintenance window, it is recommended to disable SAP Fiori launchpad user personalization, to ensure data consistency. This can be done via launchpad parameters. <LINK>
+  
+# SUPPORT
+
+This project is provided "as-is": there is no guarantee that raised issues will be answered or addressed in future releases.
+
+# License
+
+Copyright (c) 2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+The content of this repository is licensed under the SAP SAMPLE CODE LICENSE AGREEMENT as noted in the [LICENSE](https://github.com/SAP/abap-odata-smoke-test/blob/master/LICENSE) file.
