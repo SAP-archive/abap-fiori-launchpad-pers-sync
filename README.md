@@ -1,4 +1,4 @@
-# Purpose
+# Description
 Today, there is no built-in functionality to syncronize any SAP Fiori launchpad user personalization across multiple distributed Fiori frontend servers. This typically is an issue in larger system landscapes:
 * Mirrored Fiori Frontend Server within one region for high availability
 * Global Landscape Setup with different Fiori Frontend Server per region for high availability and best performance
@@ -15,6 +15,14 @@ In SAP Fiori, one distinguishes two types of user personalization:
 *In-App personalization "LREP"*  
 > e.g. filter variants, table variants, ...
 
+# Requirements
+- Either
+  - two or more identical Fiori Frontend Server
+  - or two or more identical clients on same server/system
+- same software stack, base customizing, roles, user etc., both fed by same DEV/QAS system(s)!
+- Trusted RFC connection
+- NW ABAP, SAP_UI >= 7.51
+
 # Architecture
 
 The architecture of the solution is depicted below. Please note, that there is a small difference between UI2 and LREP, when it comes to the transmitted data. Whereas for UI2, a full sync can be performed (means old data is purged and replaced by all existing personalization data), for LREP, only changes = delta will be taken into account. See also section FAQ.
@@ -23,23 +31,19 @@ The architecture of the solution is depicted below. Please note, that there is a
 
 ![architecture](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/AR_SUMMARY.png)
 
-## UI2
+## SAP Fiori launchpad personalization "UI2"
 
 ![architecture_ui2](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/AR_UI2.png)
 
-## LREP
+## In-App personalization "LREP"
 
 ![architecture_lrep](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/AR_LREP.png)
 
-# Prerequisites
-- Either
-  - two or more identical Fiori Frontend Server
-  - or two or more identical clients on same server/system
-- same software stack, base customizing, roles, user etc., both fed by same DEV/QAS system(s)!
-- Trusted RFC connection
-- NW ABAP, SAP_UI >= 7.51
+# Download
 
-# Deployment
+xyz
+
+# Installation
 
 ## RFC Connection (SM59)
 Create trusted RFC connection for current user, as depicted below:
@@ -53,11 +57,10 @@ Auth. Objects S_RFC (Source) / S_RFCACL (Destination)
 ![PFCG](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/PFCG.png)
 
 ## Customizing Table (SE11/SM30)
-Name e.g. ZYSYNCFLAG  
+Name: e.g. ZYSYNCFLAG  
 Type/Delivery Class: Transparent Table / "C" (Cust. Table), Display/Maintenance Allowed  
 Data Class: APPL0  
-Size Category: 0  
-Transparent Table  
+Size Category: 0   
 Storage Type: Column Store  
 Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Maintenance Generator"  
 
@@ -110,7 +113,11 @@ Code
 - Check destination system
 - Check Application Log, transaction SLG1 - Object "/UI2/BE", Sub-Object "/UI2/LAUNCHPAD"
 
-![SLG1](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/SLG1.png)
+![SLG1](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/SLG1_OUTPUT.png)
+
+# SUPPORT
+
+xyz
 
 # FAQ
 
