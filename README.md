@@ -69,25 +69,25 @@ Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Ma
 ### Function Groups (SE37)
 #### Z_SYNC_PERS (UI2)
 
-[Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/FUNCTION%20Z_SYNC_PERS.txt)
+[Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/FUNCTION%20Z_SYNC_PERS.abap)
 
 ![Z_SYNC_PERS](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS.png)
 
 #### Z_SYNC_PERS_REMOTE (UI2)
 
-[Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/FUNCTION%20Z_SYNC_PERS_REMOTE.txt)
+[Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/FUNCTION%20Z_SYNC_PERS_REMOTE.abap)
 
 ![Z_SYNC_PERS_REMOTE](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_REMOTE.png)
 
 ### Z_SYNC_PERS_LREP (LREP)
 
-[Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/FUNCTION%20Z_SYNC_PERS_LREP.txt)
+[Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/FUNCTION%20Z_SYNC_PERS_LREP.abap)
 
 ![Z_SYNC_PERS_LREP](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_LREP.png)
 
 #### Z_SYNC_PERS_LREP_REMOTE (LREP)
 
-[Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/FUNCTION%20Z_SYNC_PERS_LREP_REMOTE.txt)
+[Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/FUNCTION%20Z_SYNC_PERS_LREP_REMOTE.abap)
 
 ![Z_SYNC_PERS_LREP_REMOTE](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_LREP_REMOTE.png)
 
