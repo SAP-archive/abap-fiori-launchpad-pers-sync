@@ -54,25 +54,40 @@ Create a trusted RFC connection with setting "current user" in each source syste
 ![SM59](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/SM59.png)
 
 ### Roles (PFCG)
-As the solution requires trusted RFC communication, respective roles on target / destinations servers need to be created.
+As the solution requires trusted RFC communication, respective roles on source & destinations servers need to be created.
 Auth. Objects S_RFC (Source) / S_RFCACL (Destination)
 
 ![PFCG](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/PFCG.png)
 
 ### Customizing Table (SE11/SM30)
+Create a cross-client customizing table as follows
+
 Name: e.g. ZYSYNCFLAG  
 Type/Delivery Class: Transparent Table / "C" (Cust. Table), Display/Maintenance Allowed  
 Data Class: APPL0  
 Size Category: 0   
 Storage Type: Column Store  
-Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Maintenance Generator"  
+
+Create customizing view: In SE11 for the given table ZYSYNCFLAG, use menu "Utilities" -> "Table Maintenance Generator"  
 
 ![ZSYNCFLAG](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/ZSYNCFLAG.png)
 
 ![ZSYNCFLAG MAINTENANCE](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/ZSYNCFLAG_MAIN.png)
 
 ### Function Groups (SE37)
+
+Create a function group e.g. Z_FLP_SYNC and the following function modules below.
+
 #### Z_SYNC_PERS (UI2)
+
+Purpose: Fetches UI2 personalization data and performs RFC call to destination system
+Flow: 
+- Triggered in the UI2 Enhancement Spot (see below)
+- Checks if local call (If RFC call = destination system, we have to stop processing to avoid infinite loops!)
+- Reads current logical system
+- Checks if sync enabled
+- Fetches UI2 data for the given uer
+- Performs RFC call Z_SYNC_PERS_REMOTE
 
 [Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/FUNCTION%20Z_SYNC_PERS.abap)
 
@@ -80,17 +95,39 @@ Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Ma
 
 #### Z_SYNC_PERS_REMOTE (UI2)
 
+Purpose: Stores UI2 personalization data in destination system
+Flow: 
+- Triggered via RFC call
+- Purges all personalization data for given user
+- Stores all personalization data for given user
+- Triggers UI2 API
+
 [Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/FUNCTION%20Z_SYNC_PERS_REMOTE.abap)
 
 ![Z_SYNC_PERS_REMOTE](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_REMOTE.png)
 
 ### Z_SYNC_PERS_LREP (LREP)
 
+Purpose: Fetches LREP personalization data and performs RFC call to destination system
+Flow: 
+- Triggered in the LREP Enhancement Spot (see below)
+- Checks if local call (If RFC call = destination system, we have to stop processing to avoid infinite loops!)
+- Reads current logical system
+- Checks if sync enabled
+- Fetches LREP data for the given uer
+- Performs RFC call Z_SYNC_PERS_LREP_REMOTE
+
 [Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/FUNCTION%20Z_SYNC_PERS_LREP.abap)
 
 ![Z_SYNC_PERS_LREP](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/Z_SYNC_PERS_LREP.png)
 
 #### Z_SYNC_PERS_LREP_REMOTE (LREP)
+
+Purpose: Stores/Purges LREP personalization data in destination system
+Flow: 
+- Triggered via RFC call
+- Upserts/Purges given personalization data entry for given user
+- Triggers LREP API
 
 [Copy & paste code](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/src/FUNCTION%20Z_SYNC_PERS_LREP_REMOTE.abap)
 
