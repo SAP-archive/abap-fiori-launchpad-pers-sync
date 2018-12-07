@@ -27,7 +27,7 @@ Check out this short [demo video](https://sapvideoa35699dc5.hana.ondemand.com/?e
   - two or more **identical** Fiori Frontend Server
   - or two or more **identical** clients on same server/system
 - **identical** means = same software stack, base customizing, roles, user etc., typically both fed by same DEV/QAS system(s)!
-- Trusted RFC connection
+- Trusted RFC connections ("current user")
 - [Logical System](https://help.sap.com/viewer/61af834e09164854993e81aa39be576d/1809.000/en-US/b4b0b13bb3acef3ce10000000a11402f.html) maintained in each source system / client
 
 # Architecture
