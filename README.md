@@ -4,10 +4,7 @@ If you are operating multiple Fiori Frontend servers for high availability or fa
 Today, there is no built-in functionality to syncronize any SAP Fiori launchpad user personalization across multiple distributed Fiori frontend servers. This typically is an issue in larger system landscapes:
 * Mirrored Fiori Frontend Server within one region for high availability
 * Global Landscape Setup with different Fiori Frontend Server per region for high availability and best performance
-
 This sample code offers an easy approach of closing this gap.
-
-<br>
 
 In SAP Fiori, one distinguishes two types of user personalization:
 
