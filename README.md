@@ -25,7 +25,8 @@ https://sapvideoa35699dc5.hana.ondemand.com/?entry_id=0_dhbsyiqd
   - or two or more identical clients on same server/system
 - same software stack, base customizing, roles, user etc., both fed by same DEV/QAS system(s)!
 - Trusted RFC connection
-- NW ABAP, SAP_UI >= 7.51
+- [Logical System](https://help.sap.com/viewer/61af834e09164854993e81aa39be576d/1809.000/en-US/b4b0b13bb3acef3ce10000000a11402f.html) maintained in each source system / client
+- SAP Netweaver ABAP, SAP_UI >= 7.51
 
 # Architecture
 
