@@ -1,4 +1,6 @@
 # Description
+If you are operating multiple Fiori Frontend servers for high availability or failover reasons and have issues around the consistency of user personalization for the SAP Fiori launchpad, you can use this described technique and sample coding to effectively syncronize launchpad as well as in-app personalization configurations across your landscape.
+
 Today, there is no built-in functionality to syncronize any SAP Fiori launchpad user personalization across multiple distributed Fiori frontend servers. This typically is an issue in larger system landscapes:
 * Mirrored Fiori Frontend Server within one region for high availability
 * Global Landscape Setup with different Fiori Frontend Server per region for high availability and best performance
@@ -15,9 +17,9 @@ In SAP Fiori, one distinguishes two types of user personalization:
 **In-App personalization "LREP"** 
 > e.g. filter variants, table variants, ...
 
-# Demo Video
+# Demo
 
-https://sapvideoa35699dc5.hana.ondemand.com/?entry_id=0_dhbsyiqd
+Check out this short [demo video](https://sapvideoa35699dc5.hana.ondemand.com/?entry_id=0_dhbsyiqd) on the provided functionality. In this example, we use two different clients.
 
 # Requirements
 * **SAP Netweaver ABAP >= 7.51 incl. SAP_UI** environment e.g. tested on [SAP S/4HANA 1709/1809](https://blogs.sap.com/?p=745947)
@@ -49,7 +51,7 @@ The architecture of the solution is depicted below. Please note, that there is a
 It is actually not necessary to download any files, you can easily copy and paste the required code fragments directly, as mentioned below. If you still like to have a local copy, you can follow this [guide](https://help.github.com/articles/cloning-a-repository/).
 
 ### RFC Connection (SM59)
-Create trusted RFC connection for current user, as depicted below:
+Create a trusted RFC connection with setting "current user" in each source system, as depicted below:
 
 ![SM59](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/SM59.png)
 
@@ -117,8 +119,8 @@ Customizing (SM30) View: Create view. In SE11, use menu "Utilities" -> "Table Ma
 
 - Maintain customizing table ZSYNCFLAG via SM30
 - Assign roles to user(s)
-- Perform personalization on source system.
-- Check destination system
+- Perform SAP Fiori launchpad personalization on source system
+- Check SAP Fiori launchpad personalization on destination system
 - Check Application Log, transaction SLG1 - Object "/UI2/BE", Sub-Object "/UI2/LAUNCHPAD"
 
 ![SLG1](https://github.com/SAP/abap-fiori-launchpad-pers-sync/blob/master/docs/img/SLG1_OUTPUT.png)
