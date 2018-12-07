@@ -20,13 +20,13 @@ In SAP Fiori, one distinguishes two types of user personalization:
 https://sapvideoa35699dc5.hana.ondemand.com/?entry_id=0_dhbsyiqd
 
 # Requirements
+* **SAP Netweaver ABAP >= 7.51 incl. SAP_UI** environment e.g. tested on [SAP S/4HANA 1709/1809](https://blogs.sap.com/?p=745947)
 - Either
   - two or more identical Fiori Frontend Server
   - or two or more identical clients on same server/system
 - same software stack, base customizing, roles, user etc., both fed by same DEV/QAS system(s)!
 - Trusted RFC connection
 - [Logical System](https://help.sap.com/viewer/61af834e09164854993e81aa39be576d/1809.000/en-US/b4b0b13bb3acef3ce10000000a11402f.html) maintained in each source system / client
-- SAP Netweaver ABAP, SAP_UI >= 7.51
 
 # Architecture
 
