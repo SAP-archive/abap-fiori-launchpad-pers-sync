@@ -83,6 +83,7 @@ Create a function group e.g. Z_FLP_SYNC and the following function modules below
 #### Z_SYNC_PERS (UI2)
 
 Purpose: Fetches UI2 personalization data and performs RFC call to destination system
+
 Flow: 
 - Triggered in the UI2 Enhancement Spot (see below)
 - Checks if local call (If RFC call = destination system, we have to stop processing to avoid infinite loops!)
@@ -98,6 +99,7 @@ Flow:
 #### Z_SYNC_PERS_REMOTE (UI2)
 
 Purpose: Stores UI2 personalization data in destination system
+
 Flow: 
 - Triggered via RFC call
 - Purges all personalization data for given user
@@ -111,6 +113,7 @@ Flow:
 ### Z_SYNC_PERS_LREP (LREP)
 
 Purpose: Fetches LREP personalization data and performs RFC call to destination system
+
 Flow: 
 - Triggered in the LREP Enhancement Spot (see below)
 - Checks if local call (If RFC call = destination system, we have to stop processing to avoid infinite loops!)
@@ -126,6 +129,7 @@ Flow:
 #### Z_SYNC_PERS_LREP_REMOTE (LREP)
 
 Purpose: Stores/Purges LREP personalization data in destination system
+
 Flow: 
 - Triggered via RFC call
 - Upserts/Purges given personalization data entry for given user
