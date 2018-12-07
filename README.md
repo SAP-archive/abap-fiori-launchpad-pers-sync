@@ -7,6 +7,8 @@ Today, there is no built-in functionality to syncronize any SAP Fiori launchpad 
 
 This sample code offers an easy approach of closing this gap.
 
+## Personalization
+
 In SAP Fiori, one distinguishes two types of user personalization:
 
 **SAP Fiori launchpad personalization "UI2"**
