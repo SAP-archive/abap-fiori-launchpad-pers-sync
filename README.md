@@ -16,6 +16,10 @@ In SAP Fiori, one distinguishes two types of user personalization:
 > e.g. filter variants, table variants, ...
 
 # Requirements
+
+https://sapvideoa35699dc5.hana.ondemand.com/?entry_id=0_dhbsyiqd
+
+# Requirements
 - Either
   - two or more identical Fiori Frontend Server
   - or two or more identical clients on same server/system

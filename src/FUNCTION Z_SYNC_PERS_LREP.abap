@@ -16,6 +16,7 @@ FUNCTION Z_SYNC_PERS_LREP.
     DATA: lv_sync_check  TYPE boolean.
     DATA: lv_caller_client TYPE RFCDISPLAY-RFCCLIENT.
     DATA: lv_caller_sysid TYPE SY-SYSID.
+    DATA: lv_logical_system TYPE LOGSYS.
 
     DATA:
     my_message1 TYPE STRING,
@@ -53,7 +54,20 @@ IF sy-subrc <> 0.
 
     lv_sync_check = ABAP_FALSE.
 
-    SELECT SINGLE * INTO lv_sync_cust FROM zsyncflag.
+*         Get Logsys...
+    call function 'OWN_LOGICAL_SYSTEM_GET'
+     IMPORTING
+       OWN_LOGICAL_SYSTEM                   = lv_logical_system
+*     EXCEPTIONS
+*       OWN_LOGICAL_SYSTEM_NOT_DEFINED       = 1
+*       OTHERS                               = 2
+              .
+    if sy-subrc <> 0.
+* Implement suitable error handling here
+    endif.
+
+*         Get Sync Flag...
+    SELECT SINGLE * INTO lv_sync_cust FROM zsyncflag WHERE source = lv_logical_system.
     IF sy-subrc <> 0.
       EXIT.
     ENDIF.
