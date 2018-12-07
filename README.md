@@ -15,7 +15,7 @@ In SAP Fiori, one distinguishes two types of user personalization:
 **In-App personalization "LREP"** 
 > e.g. filter variants, table variants, ...
 
-# Requirements
+# Demo Video
 
 https://sapvideoa35699dc5.hana.ondemand.com/?entry_id=0_dhbsyiqd
 
