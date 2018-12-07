@@ -19,7 +19,7 @@ In SAP Fiori, one distinguishes two types of user personalization:
 
 # Demo
 
-Check out this short [demo video](https://sapvideoa35699dc5.hana.ondemand.com/?entry_id=0_dhbsyiqd) on the provided functionality. In this example, we use two different clients.
+Check out this short [demo video](https://sapvideoa35699dc5.hana.ondemand.com/?entry_id=0_dhbsyiqd) on the provided functionality. In this example, two different clients in a single system are used.
 
 # Requirements
 * **SAP Netweaver ABAP >= 7.51 incl. SAP_UI** environment e.g. tested on [SAP S/4HANA 1709/1809](https://blogs.sap.com/?p=745947)
