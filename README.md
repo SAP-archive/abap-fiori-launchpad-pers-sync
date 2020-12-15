@@ -1,3 +1,8 @@
+![](https://img.shields.io/badge/STATUS-NOT%20CURRENTLY%20MAINTAINED-red.svg?longCache=true&style=flat)
+
+# Important Notice
+This public repository is read-only and no longer maintained.
+
 # Description
 If you are operating multiple Fiori Frontend servers for high availability or failover reasons and have issues around the consistency of user personalization for the SAP Fiori launchpad, you can use this described technique and sample coding to effectively syncronize launchpad as well as in-app personalization configurations across your landscape.
 
